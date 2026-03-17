@@ -18,13 +18,13 @@ html{
     color: var(--text-color);
 }
 body{
-    min-height: 100vh;
+    min-height: 100dvh; 
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: url("/Background/digital-art-with-city-landscape-architecture.jpg");
-    background-size: 100%;
+    background-size: cover; /* Changed from 100% to cover to prevent whitespace */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -182,17 +182,17 @@ input[type="checkbox"]{
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 300x;
+    /* Changed to dvh so the bottom doesn't hide behind mobile navigation bars */
+    height: 100dvh; 
+    width: 400px; /* FIXED TYPO: changed 300x to 300px */
     background-color: var(--primary-color);
     border-right: 2px solid var(--secondary-color);
     box-sizing: border-box;
     padding: 20px;
     z-index: 1000;
     background: url("/Background/digital-art-moon-tree-wallpaper.jpg");
-    background-size: cover;
+    background-size: cover; 
     background-repeat: no-repeat;
-    /* Move it off-screen to the left by default */
     transform: translateX(-100%); 
     transition: transform 0.3s ease-in-out;
     box-shadow: 10px 0 50px rgba(0,0,0,0.5);
@@ -308,6 +308,8 @@ input[type="checkbox"]{
     body {
         background:url("Background/digital-art-with-city-landscape-architecture.jpg");
         background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         background-repeat: no-repeat; /* Adjusts focal point for mobile */
     }
 
@@ -319,6 +321,7 @@ input[type="checkbox"]{
     .wrapper {
         width: 100%;
         padding: 0 15px;
+        box-sizing: border-box;
     }
 
     #add-button {
@@ -330,8 +333,9 @@ input[type="checkbox"]{
     }
 
     .sidebar {
-        width: 85%; /* Covers most of the screen on mobile */
-        background-color: rgba(0, 0, 0, 0.85); /* Darker tint for mobile */
+        width: 95%; /* Covers most of the screen on mobile */
+        background-color: rgba(28, 29, 32, 0.85); 
+        background-blend-mode: overlay; /* Darker tint for mobile */
     }
 
     #category-list li {
